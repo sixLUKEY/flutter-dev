@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+
+class StarButton extends StatefulWidget {
+  const StarButton({super.key});
+
+  @override
+  State<StarButton> createState() => _StarButtonState();
+}
+
+class _starButtonState extends Star<StarButton> {
+  bool state = false;
+  late final ColorScheme _colorScheme = Theme.of(context).colorScheme;
+
+  Icon get icon {
+    final IconData iconData = state ? Icons.star : Icons.star_outline;
+
+    return Icon(
+      iconData,
+      color: Colors.grey,
+      size: 20,
+    );
+  }
+
+  void _toggle() {
+    setState(() {
+      state = !state;
+    });
+  }
+
+  double get turns => state ? 1 : 0;
+}

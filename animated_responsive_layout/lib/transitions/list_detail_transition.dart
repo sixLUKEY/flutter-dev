@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import '../animations.dart';
+import 'package:animated_responsive_layout/animations.dart';
 
 class ListDetailTransition extends StatefulWidget {
   const ListDetailTransition({
@@ -63,8 +63,10 @@ class _ListDetailTransitionState extends State<ListDetailTransition> {
           ),
         ],
       ]);
+
       widthAnimation = sequence.animate(sizeAnimation);
     }
+
     currentFlexFactor = nextFlexFactor;
   }
 

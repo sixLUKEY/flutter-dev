@@ -7,18 +7,56 @@ class QuestionsSummary extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return SizedBox(
+    return Container(
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(10, 255, 255, 255),
+      ),
       height: 300,
+      padding: const EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: 20,
+      ),
       child: SingleChildScrollView(
         child: Column(
           children: questionData.map((data) {
             return Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(((data['question_index'] as int) + 1).toString()),
+                DecoratedBox(
+                  decoration: BoxDecoration(
+                      color: Colors.white60,
+                      border: Border.all(
+                        color: Colors.purpleAccent,
+                      ),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(20),
+                      )),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 6,
+                      horizontal: 10,
+                    ),
+                    child: Text(
+                      ((data['question_index'] as int) + 1).toString(),
+                      style: const TextStyle(
+                        color: Colors.purpleAccent,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
                 Expanded(
                   child: Column(
                     children: [
-                      Text(data['question'] as String),
+                      Text(
+                        data['question'] as String,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.start,
+                      ),
                       const SizedBox(
                         height: 5,
                       ),
@@ -26,7 +64,16 @@ class QuestionsSummary extends StatelessWidget {
                       const SizedBox(
                         height: 5,
                       ),
-                      Text(data['correct_answer'] as String),
+                      Text(
+                        data['correct_answer'] as String,
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                        textAlign: TextAlign.start,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
                     ],
                   ),
                 ),

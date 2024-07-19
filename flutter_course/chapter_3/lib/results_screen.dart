@@ -42,11 +42,12 @@ class ResultsScreen extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.white70,
+                fontSize: 16,
               ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
             QuestionsSummary(
               questionData: summaryData,

@@ -1,5 +1,5 @@
-import 'package:chapter_5/expenses_list.dart';
 import 'package:chapter_5/models/expense.dart';
+import 'package:chapter_5/widgets/expenses_list.dart';
 import 'package:flutter/material.dart';
 
 class Expenses extends StatefulWidget {
@@ -12,7 +12,7 @@ class Expenses extends StatefulWidget {
 class _ExpensesState extends State<Expenses> {
   final List<Expense> _registeredExpenses = [
     Expense(
-      title: 'title',
+      title: 'Nothing',
       amount: 20.55,
       category: Category.work,
       date: DateTime.now(),

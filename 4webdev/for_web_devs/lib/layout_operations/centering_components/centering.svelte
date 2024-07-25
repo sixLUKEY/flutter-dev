@@ -6,5 +6,8 @@
     width: 320px;
     height: 240px;
     font: 900 24px Georgia;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>

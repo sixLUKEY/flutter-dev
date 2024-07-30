@@ -79,12 +79,12 @@ class _NewExpenseState extends State<NewExpense> {
 
   @override
   Widget build(context) => Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(24),
             topRight: Radius.circular(24),
           ),
-          color: Colors.white,
+          color: Theme.of(context).scaffoldBackgroundColor,
         ),
         margin: const EdgeInsets.only(top: 64),
         child: Padding(

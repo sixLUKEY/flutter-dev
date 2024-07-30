@@ -38,3 +38,34 @@ class Expense {
     return formatter.format(date);
   }
 }
+
+class ExpenseBucket {
+  ExpenseBucket({
+    required this.category,
+    required this.expenses,
+  });
+
+  ExpenseBucket.forCategory(List<Expense> allExpenses, this.category)
+      : expenses = allExpenses.where((e) => e.category == category).toList();
+
+  final Category category;
+  final List<Expense> expenses;
+
+  double get totalExpenses {
+    // final List<double> expenseTotal = [];
+    // expenses.map((e) {
+    //   expenseTotal.add(e.amount);
+    // });
+    // if (expenseTotal.isEmpty) {
+    //   return 0.00;
+    // }
+    // final result = expenseTotal.reduce((value, element) => value + element);
+    // return result;
+    double sum = 0;
+
+    for (final expense in expenses) {
+      sum += expense.amount;
+    }
+    return sum;
+  }
+}

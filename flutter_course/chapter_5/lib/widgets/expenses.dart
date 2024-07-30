@@ -1,4 +1,5 @@
 import 'package:chapter_5/models/expense.dart';
+import 'package:chapter_5/widgets/chart/chart.dart';
 import 'package:chapter_5/widgets/expenses_list/expenses_list.dart';
 import 'package:chapter_5/widgets/new_expense.dart';
 import 'package:flutter/material.dart';
@@ -101,7 +102,12 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          Expanded(child: mainContent),
+          Chart(
+            expenses: _registeredExpenses,
+          ),
+          Expanded(
+            child: mainContent,
+          ),
         ],
       ),
     );

@@ -29,6 +29,8 @@ class _ExpensesState extends State<Expenses> {
 
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
+      useSafeArea: true,
+      // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       context: context,
